@@ -9,6 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("CRUD with arrays");
+
         while (loop) {
             menu();
         }

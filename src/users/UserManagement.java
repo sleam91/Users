@@ -7,20 +7,19 @@ public class UserManagement {
 
     static void createUser() {
 
-        int id = counter + 1;
-        System.out.println("\nUser ID: " + id);
         Main.sc.nextLine();
 
-        System.out.println("Enter username: ");
+        System.out.println("Enter new username: ");
         String name = Main.sc.nextLine();
 
+        System.out.println("Enter new user ID: ");
+        int id = Main.sc.nextInt();
+        Main.sc.nextLine();
+
         System.out.println("Birthdate (yyyyMMdd): ");
-        String birthday = Main.sc.nextLine();
+        String birthdate = Main.sc.nextLine();
 
-        User s = new User(id, name, birthday);
-        s.toString();
-
-        users[counter] = new User(id, name, birthday);
+        users[counter] = new User(id, name, birthdate);
         counter++;
 
         if (counter >= users.length) {
