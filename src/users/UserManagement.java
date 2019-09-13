@@ -6,9 +6,9 @@ public class UserManagement {
     static User[] users = new User[30];
 
     static void createUser() {
-        
-        int id = counter+1;
-        System.out.println("\nUser ID: "+id);
+
+        int id = counter + 1;
+        System.out.println("\nUser ID: " + id);
         Main.sc.nextLine();
 
         System.out.println("Enter username: ");
@@ -31,7 +31,7 @@ public class UserManagement {
 
             users = users2;
         }
-        
+
         System.out.println("User registered");
 
     }
@@ -67,7 +67,7 @@ public class UserManagement {
     public static void deleteUserById(int id) {
         for (int i = 0; i < counter; i++) {
             if ((users[i].getId()) == id) {
-                System.out.println("\nUser "+users[i].getUsername()+" deleted");
+                System.out.println("\nUser " + users[i].getUsername() + " deleted");
                 if (i == counter - 1) {
                     users[counter - 1] = null;
                     counter--;
@@ -81,11 +81,11 @@ public class UserManagement {
         }
         System.out.println("\nNo such user ID");
     }
-    
-        public static void deleteUserByUsername(String username) {
+
+    public static void deleteUserByUsername(String username) {
         for (int i = 0; i < counter; i++) {
             if (users[i].getUsername().equalsIgnoreCase(username)) {
-                System.out.println("\nUser with ID "+users[i].getId()+" deleted");
+                System.out.println("\nUser with ID " + users[i].getId() + " deleted");
                 if (i == counter - 1) {
                     users[counter - 1] = null;
                     counter--;
@@ -99,6 +99,5 @@ public class UserManagement {
         }
         System.out.println("\nNo such username");
     }
-
 
 }

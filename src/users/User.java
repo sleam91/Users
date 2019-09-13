@@ -14,7 +14,7 @@ public class User {
         this.id = id;
         this.username = name;
         this.birthdate = LocalDate.parse(birthdate, FORMATTER);
-        this.registrationDate=LocalDate.now();
+        this.registrationDate = LocalDate.now();
     }
 
     public int getId() {
@@ -49,14 +49,12 @@ public class User {
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "\nID: " + id + " Name: " + username 
+        return "\nID: " + id + " Name: " + username
                 + "\nBirthday: " + birthdate.format(FORMATTER)
-                +"\nRegistration date: "+ registrationDate.format(FORMATTER);
+                + "\nRegistration date: " + registrationDate.format(FORMATTER);
     }
 
 }

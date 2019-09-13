@@ -26,7 +26,7 @@ public class Main {
         System.out.print("Make a choice: ");
 
         int choice = sc.nextInt();
-        
+
         switch (choice) {
             case 1:
                 UserManagement.createUser();
