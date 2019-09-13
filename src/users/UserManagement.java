@@ -7,8 +7,6 @@ public class UserManagement {
 
     static void createUser() {
 
-        Main.sc.nextLine();
-
         System.out.println("Enter new username: ");
         String name = Main.sc.nextLine();
 

@@ -18,12 +18,12 @@ public class Main {
     }
 
     private static void menu() {
-        System.out.println("\n1.Create User");
-        System.out.println("2.Read User");
-        System.out.println("3.Update User");
-        System.out.println("4.Delete by ID");
-        System.out.println("5.Delete by Username");
-        System.out.println("0.Exit");
+        System.out.println("\n1. Create User");
+        System.out.println("2. Read User");
+        System.out.println("3. Update User");
+        System.out.println("4. Delete by ID");
+        System.out.println("5. Delete by Username");
+        System.out.println("0. Exit");
 
         System.out.print("Make a choice: ");
 
@@ -31,6 +31,7 @@ public class Main {
 
         switch (choice) {
             case 1:
+                sc.nextLine();
                 UserManagement.createUser();
                 break;
             case 2:
