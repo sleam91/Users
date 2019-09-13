@@ -1,6 +1,5 @@
 package users;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -14,7 +13,7 @@ public class User {
     public User(int id, String name, String birthdate) {
         this.id = id;
         this.username = name;
-        this.birthdate=LocalDate.parse(birthdate,FORMATTER);
+        this.birthdate = LocalDate.parse(birthdate, FORMATTER);
     }
 
     public int getId() {
@@ -38,7 +37,7 @@ public class User {
     }
 
     public void setBirthday(LocalDate date) {
-        
+
         this.birthdate = date;
     }
 

@@ -1,7 +1,5 @@
 package users;
 
-
-
 import java.util.Scanner;
 
 public class Main {
@@ -19,7 +17,7 @@ public class Main {
 
     private static void menu() {
         System.out.println("1.Create");
-        System.out.println("2.Remove");
+        System.out.println("2.Read");
         System.out.println("3.Update");
         System.out.println("4.Delete");
         System.out.println("0.Exit");
@@ -32,25 +30,26 @@ public class Main {
                 UserManagement.createUser();
                 break;
             case 2:
-                System.out.print("What is the id of the student to be removed?");
+                System.out.print("What is the ID of the user to be shown?");
                 int id = Main.sc.nextInt();
                 sc.nextLine();
-                UserManagement.removeUserById(id);
+                UserManagement.readUserByID(id);
                 break;
+
             case 3:
-                System.out.print("What is the id of the student to be updated?");
+                System.out.print("What is the ID of the user to be updated?");
                 id = Main.sc.nextInt();
                 sc.nextLine();
                 UserManagement.updateUser(id);
                 break;
             case 4:
-                System.out.print("What is the id of the student to be shown?");
+                System.out.print("What is the ID of the user to be removed?");
                 id = Main.sc.nextInt();
                 sc.nextLine();
-                UserManagement.deleteUserByID(id);
+                UserManagement.deleteUserById(id);
                 break;
             case 0:
-                loop=false;
+                loop = false;
                 break;
         }
     }

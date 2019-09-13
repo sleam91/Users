@@ -1,6 +1,5 @@
 package users;
 
-
 public class UserManagement {
 
     static int counter = 0;
@@ -13,10 +12,10 @@ public class UserManagement {
 
         System.out.println("Username: ");
         String name = Main.sc.nextLine();
-        
+
         System.out.println("Birthdate (dd-MM-yyyy): ");
         String birthday = Main.sc.nextLine();
-        
+
         User s = new User(id, name, birthday);
         s.toString();
 
@@ -34,19 +33,14 @@ public class UserManagement {
 
     }
 
-    public static void removeUserById(int id) {
+    static void readUserByID(int id) {
         for (int i = 0; i < counter; i++) {
-            if ((users[i].getId()) == id) {
-                if (i == counter - 1) {
-                    users[counter - 1] = null;
-                    counter--;
-                } else {
-                    users[i] = users[counter - 1];
-                    users[counter - 1] = null;
-                    counter--;
-                }
+            if (users[i].getId() == id) {
+                System.out.println(users[i]);
+                return;
             }
         }
+        System.out.println("No such user ID");
     }
 
     static void updateUser(int id) {
@@ -58,20 +52,28 @@ public class UserManagement {
                 users[i].setUsername(name);
                 System.out.println("Username is updated");
                 System.out.println(users[i]);
+                return;
 
             }
         }
+        System.out.println("No such user ID");
     }
 
-
-    static void deleteUserByID(int id) {
+    public static void deleteUserById(int id) {
         for (int i = 0; i < counter; i++) {
-            if (users[i].getId() == id) {
-                System.out.println(users[i]);
+            if ((users[i].getId()) == id) {
+                if (i == counter - 1) {
+                    users[counter - 1] = null;
+                    counter--;
+                } else {
+                    users[i] = users[counter - 1];
+                    users[counter - 1] = null;
+                    counter--;
+                }
                 return;
             }
         }
-        System.out.println("No such username");
+        System.out.println("No such user ID");
     }
 
 }
