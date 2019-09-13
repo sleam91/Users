@@ -6,14 +6,15 @@ public class UserManagement {
     static User[] users = new User[30];
 
     static void createUser() {
-        System.out.println("User ID: ");
-        int id = Main.sc.nextInt();
+        
+        int id = counter+1;
+        System.out.println("\nUser ID: "+id);
         Main.sc.nextLine();
 
-        System.out.println("Username: ");
+        System.out.println("Enter username: ");
         String name = Main.sc.nextLine();
 
-        System.out.println("Birthdate (dd-MM-yyyy): ");
+        System.out.println("Birthdate (yyyyMMdd): ");
         String birthday = Main.sc.nextLine();
 
         User s = new User(id, name, birthday);
@@ -30,22 +31,26 @@ public class UserManagement {
 
             users = users2;
         }
+        
+        System.out.println("User registered");
 
     }
 
     static void readUserByID(int id) {
         for (int i = 0; i < counter; i++) {
             if (users[i].getId() == id) {
+                System.out.println();
                 System.out.println(users[i]);
                 return;
             }
         }
-        System.out.println("No such user ID");
+        System.out.println("\nNo such user ID");
     }
 
     static void updateUser(int id) {
         for (int i = 0; i < counter; i++) {
             if (users[i].getId() == id) {
+                System.out.println();
                 System.out.println(users[i]);
                 System.out.println("What is the new username?");
                 String name = Main.sc.nextLine();
@@ -56,12 +61,13 @@ public class UserManagement {
 
             }
         }
-        System.out.println("No such user ID");
+        System.out.println("\nNo such user ID");
     }
 
     public static void deleteUserById(int id) {
         for (int i = 0; i < counter; i++) {
             if ((users[i].getId()) == id) {
+                System.out.println("\nUser "+users[i].getUsername()+" deleted");
                 if (i == counter - 1) {
                     users[counter - 1] = null;
                     counter--;
@@ -73,7 +79,26 @@ public class UserManagement {
                 return;
             }
         }
-        System.out.println("No such user ID");
+        System.out.println("\nNo such user ID");
     }
+    
+        public static void deleteUserByUsername(String username) {
+        for (int i = 0; i < counter; i++) {
+            if (users[i].getUsername().equalsIgnoreCase(username)) {
+                System.out.println("\nUser with ID "+users[i].getId()+" deleted");
+                if (i == counter - 1) {
+                    users[counter - 1] = null;
+                    counter--;
+                } else {
+                    users[i] = users[counter - 1];
+                    users[counter - 1] = null;
+                    counter--;
+                }
+                return;
+            }
+        }
+        System.out.println("\nNo such username");
+    }
+
 
 }
